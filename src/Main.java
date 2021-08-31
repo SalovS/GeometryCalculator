@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args){
         containers(4400);
+        System.out.println(circleArea(2));
+        System.out.println(sphereScope(2));
+        System.out.println(triangleArea(2,3,4));
     }
     public static double circleArea(double R){
         return Math.PI * R * R;
     }
     public static double triangleArea(double a, double b, double c){
-        if(checkTrianle(a, b, c))
+        if(!checkTrianle(a, b, c))
             return 0;
         double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
