@@ -3,16 +3,17 @@ public class ContainersCalculator {
     final int maxContainers = 12;
 
     public void calculate(int box){
-        int containers = 0;
         if(box > 0) {
-            containers = printProcess(box);
+            printProcess(box);
         }
-        printResult(containers);
+        printResult(box);
     }
 
-    private void printResult(int containers){
+    private void printResult(int box){
+        int containers = 0;
         int trucks = 0;
-        if (containers > 0) {
+        if (box > 0) {
+            containers = (int) Math.ceil((double) box / maxBox);
             trucks = (int) Math.ceil((double) containers / maxContainers);
         }
         System.out.println("Необходимо:");
@@ -20,7 +21,7 @@ public class ContainersCalculator {
         System.out.println("контейнеров - " + containers + " шт.");
     }
 
-    private int printProcess(int box){
+    private void printProcess(int box){
         int trucks = 0;
         int containers = 0;
         int count = 0;
@@ -35,6 +36,5 @@ public class ContainersCalculator {
             }
             System.out.println("\t Ящик " + ++count);
         }
-        return containers;
     }
 }
